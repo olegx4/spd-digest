@@ -5,7 +5,7 @@ public class Main {
         final CharacterSeparator characterSeparator = new CharacterSeparator();
         final AsciiSeparatedCharacters characters = characterSeparator.separate(source);
 
-        final UniqueCharacterDifferenceCalculator calculator = new UniqueCharacterDifferenceCalculator();
+        final DifferenceCalculator calculator = new DifferenceCalculator();
         final int difference = calculator.calculate(characters.getEvenCharacters(), characters.getOddCharacters());
 
         System.out.println("First group of even Ascii code symbols : " + characters.getEvenCharacters());

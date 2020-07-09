@@ -14,11 +14,11 @@ public class AsciiSeparatedCharacters {
         return oddCharacters;
     }
 
-    public void addEven (char c) {
+    public void addEven(char c) {
         this.evenCharacters.add(c);
     }
 
-    public void addOdd (char c) {
+    public void addOdd(char c) {
         this.oddCharacters.add(c);
     }
 }
