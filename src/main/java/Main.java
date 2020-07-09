@@ -1,3 +1,7 @@
+import characterseparator.AsciiSeparatedCharacters;
+import characterseparator.CharacterSeparator;
+import differencecalculator.DifferenceCalculator;
+
 public class Main {
 
     public static void main(String[] args) {

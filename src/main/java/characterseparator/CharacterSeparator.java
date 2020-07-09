@@ -1,3 +1,5 @@
+package characterseparator;
+
 public class CharacterSeparator {
 
     public AsciiSeparatedCharacters separate(String source) {
