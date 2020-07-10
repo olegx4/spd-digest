@@ -1,10 +1,11 @@
 import characterseparator.AsciiSeparatedCharacters;
 import characterseparator.CharacterSeparator;
 import differencecalculator.DifferenceCalculator;
+import exception.SetNotInitializedException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SetNotInitializedException {
         final String source = "SPD-University";
         final CharacterSeparator characterSeparator = new CharacterSeparator();
         final AsciiSeparatedCharacters characters = characterSeparator.separate(source);
