@@ -24,4 +24,12 @@ class SumCalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void whenGroupOfCharactersNotEmpty_returnNextValue() {
+        final int expected = 478;
+        final int actual = calculator.sumOfCharacterNumber(Set.of('P', 'R', 'D', 'T', 'V', 'N'));
+
+        assertEquals(expected, actual);
+    }
 }
