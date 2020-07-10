@@ -1,4 +1,4 @@
-package differencecalculator;
+package characternumbercalculator;
 
 import exception.SetNotInitializedException;
 import org.junit.jupiter.api.Test;
