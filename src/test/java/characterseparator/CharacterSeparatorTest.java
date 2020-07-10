@@ -1,6 +1,5 @@
 package characterseparator;
 
-import exception.SetNotInitializedException;
 import exception.SourceNotInitializedException;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +11,7 @@ class CharacterSeparatorTest {
     private final CharacterSeparator characterSeparator = new CharacterSeparator();
 
     @Test
-    void whenSourceIsEmpty_returnEmptyAsciiSeparatedCharactersSets() throws SourceNotInitializedException {
+    void whenSourceIsEmpty_returnEmptyAsciiSeparatedCharactersSets() {
         final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
         final AsciiSeparatedCharacters actual = characterSeparator.separate("");
 
@@ -20,10 +19,11 @@ class CharacterSeparatorTest {
     }
 
     @Test
-    void whenSourceAsciiCharactersAreEven_returnEvenAsciiSeparatedCharacters() throws SourceNotInitializedException {
+    void whenSourceAsciiCharactersAreEven_returnEvenAsciiSeparatedCharacters() {
         final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
         expected.addEven('B');
         expected.addEven('D');
+
         final AsciiSeparatedCharacters actual = characterSeparator.separate("db");
 
         assertEquals(expected, actual);
@@ -31,10 +31,11 @@ class CharacterSeparatorTest {
     }
 
     @Test
-    void whenSourceAsciiCharactersAreOdd_returnEvenAsciiSeparatedCharacters() throws SourceNotInitializedException {
+    void whenSourceAsciiCharactersAreOdd_returnEvenAsciiSeparatedCharacters() {
         final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
         expected.addOdd('A');
         expected.addOdd('C');
+
         final AsciiSeparatedCharacters actual = characterSeparator.separate("AC");
 
         assertEquals(expected, actual);
@@ -42,12 +43,13 @@ class CharacterSeparatorTest {
     }
 
     @Test
-    void whenSourceCharactersAreNotUnique_returnUniqueSeparatedCharacters() throws SourceNotInitializedException {
+    void whenSourceCharactersAreNotUnique_returnUniqueSeparatedCharacters() {
         final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
         expected.addOdd('A');
         expected.addOdd('C');
         expected.addEven('B');
         expected.addEven('D');
+
         final AsciiSeparatedCharacters actual = characterSeparator.separate("AAACCCCBBBDD");
 
         assertEquals(expected, actual);
@@ -56,12 +58,13 @@ class CharacterSeparatorTest {
     }
 
     @Test
-    void whenSourceCharactersAreInLowerCase_returnSetsWithUpperCaseCharacters() throws SourceNotInitializedException {
+    void whenSourceCharactersAreInLowerCase_returnSetsWithUpperCaseCharacters() {
         final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
         expected.addOdd('A');
         expected.addOdd('C');
         expected.addEven('B');
         expected.addEven('D');
+
         final AsciiSeparatedCharacters actual = characterSeparator.separate("aaabbbddccc");
 
         assertEquals(expected, actual);
@@ -70,7 +73,7 @@ class CharacterSeparatorTest {
     }
 
     @Test
-    void whenSourceStringIsNull() {
+    void whenSourceStringIsNull_throwSourceNotInitializedException() {
         assertThrows(SourceNotInitializedException.class, () -> characterSeparator.separate(null));
     }
 }

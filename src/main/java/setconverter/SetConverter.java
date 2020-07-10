@@ -12,13 +12,13 @@ public class SetConverter {
         if (isNull(characters)) {
             throw new SetNotInitializedException("Source set string is not initialised");
         }
-        StringBuilder output = new StringBuilder();
+        String output = "";
         for (char c : characters) {
             if (c != characters.size() && c != characters.iterator().next()) {
-                output.append(", ");
+                output = output.concat(", ");
             }
-            output.append("'").append(c).append("'").append("=").append((int) c);
+            output = output.concat("'" + c + "'=" + (int) c);
         }
-        return output.toString();
+        return output;
     }
 }
