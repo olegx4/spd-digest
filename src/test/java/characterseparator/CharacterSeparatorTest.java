@@ -76,4 +76,24 @@ class CharacterSeparatorTest {
     void whenSourceStringIsNull_throwSourceNotInitializedException() {
         assertThrows(SourceNotInitializedException.class, () -> characterSeparator.separate(null));
     }
+
+    @Test
+    void whenSourceStringHasOddCharacter_returnAsciiSeparatedCharacterObjectWithNotEmptyOddSet() {
+        final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
+        expected.addOdd('A');
+
+        final AsciiSeparatedCharacters actual = characterSeparator.separate("a");
+
+        assertEquals(expected.getOddCharacters(), actual.getOddCharacters());
+    }
+
+    @Test
+    void whenSourceStringHasEvenCharacter_returnAsciiSeparatedCharacterObjectWithNotEmptyEvenSet() {
+        final AsciiSeparatedCharacters expected = new AsciiSeparatedCharacters();
+        expected.addEven('B');
+
+        final AsciiSeparatedCharacters actual = characterSeparator.separate("b");
+
+        assertEquals(expected.getEvenCharacters(), actual.getEvenCharacters());
+    }
 }
