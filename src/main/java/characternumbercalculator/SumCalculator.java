@@ -8,7 +8,7 @@ import static java.util.Objects.isNull;
 
 public class SumCalculator {
 
-    public int sumOfCharacterNumber(Set<Character> characters) throws SetNotInitializedException {
+    public int sumOfCharacterNumber(Set<Character> characters) {
         if (isNull(characters)) {
             throw new SetNotInitializedException("Cannot sum not initialized set of characters");
         }

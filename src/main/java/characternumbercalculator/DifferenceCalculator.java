@@ -14,7 +14,7 @@ public class DifferenceCalculator {
         this.sumCalculator = sumCalculator;
     }
 
-    public int calculate(Set<Character> evenCharacters, Set<Character> oddCharacters) throws SetNotInitializedException {
+    public int calculate(Set<Character> evenCharacters, Set<Character> oddCharacters) {
         if (isNull(evenCharacters)) {
             throw new SetNotInitializedException("Set with even characters are not initialized");
         } else if (isNull(oddCharacters)) {

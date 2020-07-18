@@ -6,7 +6,7 @@ import static java.util.Objects.isNull;
 
 public class CharacterSeparator {
 
-    public AsciiSeparatedCharacters separate(String source) throws SourceNotInitializedException {
+    public AsciiSeparatedCharacters separate(String source) {
         if (isNull(source)) {
             throw new SourceNotInitializedException("Source string is not initialised");
         }

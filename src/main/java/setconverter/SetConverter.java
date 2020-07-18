@@ -8,7 +8,7 @@ import static java.util.Objects.isNull;
 
 public class SetConverter {
 
-    public String toString(Set<Character> characters) throws SetNotInitializedException {
+    public String toString(Set<Character> characters) {
         if (isNull(characters)) {
             throw new SetNotInitializedException("Source set string is not initialised");
         }
